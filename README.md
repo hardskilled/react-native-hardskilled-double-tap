@@ -31,4 +31,4 @@ class Example extends React.Component {
 }
 ```
 
-[Hire us via Upwork!](https://www.upwork.com/o/companies/_~01b5cde52d5f4ead84/)
+[Hire us via Upwork!](https://www.upwork.com/o/companies/_~01b5cde52d5f4ead84/) | [Our website](https://hardskilled.com)
