@@ -1,15 +1,17 @@
 # Double Tap for React Native
 
+![Example](https://media.giphy.com/media/3o6nUSd2HqDivbAUXC/giphy.gif)
+
 ## Installation
 `npm install react-native-hardskilled-double-tap --save`
 
 ## Example
 ```jsx
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import DoubleTap from 'react-native-hardskilled-double-tap';
 import { Text, TouchableNativeFeedback } from 'react-native'
 
-export default class Example extends React.Component {
+export default class Example extends Component {
     constructor(props) {
         super(props);
     }
@@ -21,7 +23,7 @@ export default class Example extends React.Component {
     render() {
         return (
             <DoubleTap
-                onPress={handler} // Handler after double tap on button
+                onPress={this.handler} // Handler after double tap on button
                 delay={500} // Delay between tapas
                 component={TouchableNativeFeedback} // Custom component with onPress (default: TouchableOpacity)
             >

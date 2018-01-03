@@ -15,8 +15,8 @@ export default class HardskilledDoubleTap extends Component {
     onPressHandler() {
         const delta = new Date().getTime() - this.state.lastPress
 
-        if (delta < this.props.delay && this.props.onPress) {
-            this.props.onPress()
+        if (delta < this.props.delay) {
+            this.props.onPress && this.props.onPress()
         }
 
         this.setState({
@@ -33,16 +33,16 @@ export default class HardskilledDoubleTap extends Component {
         delete other.onPress
 
         return (
-            <Component onPress={() => this.onPressHandler()} {...other}>
+            <Component {...other} onPress={() => this.onPressHandler()}>
                 {this.props.children}
             </Component>
         )
     }
 }
 
-DoubleClicker.defaultProps = {
+HardskilledDoubleTap.defaultProps = {
     delay: 300,
-    onPress: () => console.warn('Button is tapped'),
+    onPress: () => console.warn('Button is tapped twice'),
     component: TouchableOpacity
 }
 
@@ -50,5 +50,5 @@ HardskilledDoubleTap.propTypes = {
     onPress: PropTypes.func,
     children: PropTypes.node,
     delay: PropTypes.number,
-    component: PropTypes.node
+    component: PropTypes.func
 }
