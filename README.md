@@ -5,29 +5,30 @@
 
 ## Example
 ```jsx
+import React, { Component } from 'react';
 import DoubleTap from 'react-native-hardskilled-double-tap';
-import { TouchableNativeFeedback } from 'react-native'
+import { Text, TouchableNativeFeedback } from 'react-native'
 
-class Example extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export default class Example extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-  handler() {
-    console.warn('DoubleTap clicked!');
-  }
+    handler() {
+        console.warn('DoubleTap clicked!');
+    }
 
-  render() {
-    return (
-      <DoubleTap
-        onPress={handler} // Handler after double tap on button
-        delay={500} // Delay between tapas
-        component={TouchableNativeFeedback} // Custom component with onPress (default: TouchableOpacity)
-      >
-        <Text>Click me pls!</Text>
-      </DoubleTap>
-    );
-  }
+    render() {
+        return (
+            <DoubleTap
+                onPress={handler} // Handler after double tap on button
+                delay={500} // Delay between tapas
+                component={TouchableNativeFeedback} // Custom component with onPress (default: TouchableOpacity)
+            >
+                <Text>Click me pls!</Text>
+            </DoubleTap>
+        );
+    }
 }
 ```
 
